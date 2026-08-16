@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A polished local multiplayer Tic-Tac-Toe game." />
+  <title>XO Arena | Tic-Tac-Toe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/theme.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="XO Arena home"><span class="brand-mark">XO</span><span>XO ARENA</span></a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a class="active" href="index.html">Game</a><a href="scoreboard.html">Scoreboard</a><a href="history.html">History</a>
+      </nav>
+      <button id="theme-toggle" class="icon-button" type="button" aria-label="Switch color theme"><span aria-hidden="true">◐</span></button>
+    </header>
+
+    <main class="game-layout">
+      <section class="intro-panel">
+        <p class="eyebrow">LOCAL MULTIPLAYER <span></span> READY</p>
+        <h1>Make your <em>move.</em></h1>
+        <p class="intro-copy">A sharp, head-to-head classic for two players sharing one screen.</p>
+        <div class="preview-grid" aria-hidden="true">
+          <span class="x">X</span><span></span><span class="o">O</span>
+          <span></span><span class="x">X</span><span></span>
+          <span class="o">O</span><span></span><span class="x">X</span>
+        </div>
+        <div class="mode-pill"><span class="live-dot"></span> Local match</div>
+      </section>
+
+      <section class="game-panel" aria-label="Tic-Tac-Toe game">
+        <form id="player-form" class="player-form" novalidate>
+          <div class="field"><label for="player-x">Player one <b>X</b></label><input id="player-x" maxlength="24" placeholder="Enter name" autocomplete="name" /></div>
+          <div class="vs">VS</div>
+          <div class="field"><label for="player-o">Player two <b>O</b></label><input id="player-o" maxlength="24" placeholder="Enter name" autocomplete="name" /></div>
+          <button class="start-button" type="submit">Start match <span>→</span></button>
+          <p id="form-error" class="form-error" role="alert"></p>
+        </form>
+
+        <div id="match-area" class="match-area is-hidden">
+          <div class="match-topbar">
+            <div id="turn-indicator" class="turn-indicator" aria-live="polite"></div>
+            <button id="new-game-button" class="text-button" type="button">New game</button>
+          </div>
+          <div id="board" class="board" role="grid" aria-label="Tic-Tac-Toe board">
+            <button class="cell" type="button" data-index="0" role="gridcell" aria-label="Cell 1"></button><button class="cell" type="button" data-index="1" role="gridcell" aria-label="Cell 2"></button><button class="cell" type="button" data-index="2" role="gridcell" aria-label="Cell 3"></button>
+            <button class="cell" type="button" data-index="3" role="gridcell" aria-label="Cell 4"></button><button class="cell" type="button" data-index="4" role="gridcell" aria-label="Cell 5"></button><button class="cell" type="button" data-index="5" role="gridcell" aria-label="Cell 6"></button>
+            <button class="cell" type="button" data-index="6" role="gridcell" aria-label="Cell 7"></button><button class="cell" type="button" data-index="7" role="gridcell" aria-label="Cell 8"></button><button class="cell" type="button" data-index="8" role="gridcell" aria-label="Cell 9"></button>
+          </div>
+          <p id="game-message" class="game-message" aria-live="polite"></p>
+        </div>
+      </section>
+
+      <aside class="quick-stats">
+        <p class="eyebrow">SESSION AT A GLANCE</p>
+        <div class="stat-cards">
+          <div><span id="quick-total">0</span><small>Games played</small></div><div><span id="quick-draws">0</span><small>Draws</small></div>
+          <div class="total-wins"><span id="quick-wins">0</span><small>Total wins</small></div>
+        </div>
+        <a class="view-link" href="scoreboard.html">View full scoreboard <span>→</span></a>
+      </aside>
+    </main>
+  </div>
+  <dialog id="result-dialog" class="result-dialog">
+    <button id="dialog-close" class="dialog-close" type="button" aria-label="Close result">×</button>
+    <div id="result-symbol" class="result-symbol"></div><p class="eyebrow">MATCH COMPLETE</p><h2 id="result-title"></h2><p id="result-copy"></p>
+    <div class="result-actions"><button id="play-again" class="start-button" type="button">Play again <span>→</span></button><a href="history.html" class="text-button">View history</a></div>
+  </dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="js/storage.js"></script><script src="js/game.js"></script>
+</body>
+</html>

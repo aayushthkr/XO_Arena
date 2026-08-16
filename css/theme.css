@@ -1,0 +1,13 @@
+/* XO Arena brand refresh */
+@import url("polish.css");
+:root{--bg:#111025;--panel:#1a1834;--raised:#252241;--line:#3b3760;--text:#f8f7ff;--muted:#aaa7c4;--lime:#a78bfa;--pink:#fb923c;--cyan:#67e8f9;--danger:#fb7185;--shadow:0 22px 60px #05030f99}
+[data-theme="light"]{--bg:#f8f7ff;--panel:#fff;--raised:#f0edff;--line:#ddd8f2;--text:#201d38;--muted:#726c90;--lime:#6d4de8;--pink:#d65e0f;--cyan:#087c91;--shadow:0 18px 45px #312b6018}
+body{background:radial-gradient(circle at 13% 0,#7358ed33,transparent 30rem),radial-gradient(circle at 90% 90%,#fb923c1c,transparent 27rem),var(--bg)}
+.brand-mark{color:#fff;background:linear-gradient(135deg,var(--lime),#7c3aed 52%,var(--pink));border-radius:7px;width:30px;height:30px;display:grid;place-items:center;font-size:10px;letter-spacing:-.12em;font-weight:800;box-shadow:0 5px 14px #8b5cf655}
+.start-button{color:#fff;background:linear-gradient(100deg,#7c3aed,var(--lime))}
+.live-dot{box-shadow:0 0 0 4px #a78bfa26}
+.cell.winner{box-shadow:0 0 20px #a78bfa55}
+.game-layout{min-height:calc(100vh - 88px);align-items:start;padding-top:76px}
+.player-form{gap:17px}.field{position:relative}.field label{display:flex;align-items:center;justify-content:space-between;min-height:30px}.field label b{font:700 23px "DM Mono",monospace;line-height:1;text-shadow:0 0 15px currentColor}.field:first-child{padding-right:4px}.field:last-of-type{padding-left:4px}.field input{min-height:52px;border-color:#ffffff0c}.field input:focus{box-shadow:0 0 0 3px #a78bfa22}.vs{margin-bottom:17px;color:var(--muted);font-weight:700}.game-panel{box-shadow:0 25px 65px #05030f77}.quick-stats{padding-top:4px}.stat-cards{flex-wrap:wrap;max-width:230px}.stat-cards div{min-width:104px}.stat-cards .total-wins{width:100%}.stat-cards .total-wins span{color:var(--cyan)}.preview-grid{display:grid;grid-template-columns:repeat(3,24px);grid-template-rows:repeat(3,24px);gap:3px;margin:26px 0 -4px;opacity:.72}.preview-grid span{display:grid;place-items:center;border:1px solid #a78bfa38;border-radius:4px;font:700 11px "DM Mono",monospace}.preview-grid .x{color:var(--lime)}.preview-grid .o{color:var(--pink)}.icon-button{width:34px;height:34px;display:grid;place-items:center;border:1px solid var(--line);border-radius:50%;transition:background .18s,transform .18s}.icon-button:hover{background:var(--raised);transform:rotate(20deg)}.nav-links .active{font-weight:800;color:var(--text)}
+@media(max-width:900px){.game-layout{padding-top:54px}.quick-stats{padding-top:0}.stat-cards{max-width:none}.stat-cards .total-wins{width:auto}}
+@media(max-width:620px){.game-layout{padding-top:38px}.preview-grid{display:none}.stat-cards .total-wins{width:auto}.field:first-child,.field:last-of-type{padding:0}}
